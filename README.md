@@ -35,6 +35,27 @@ cp -r unity2phaser ~/.agents/skills/
 
 安装后新开会话即可触发；或显式调用：`/skill unity2phaser <任务>`。
 
+### 更新已安装的旧版本
+
+Skill 本质就是一个文件夹，**更新 = 用仓库新内容覆盖你技能目录里的同名文件夹**，无需卸载重装、目录名不变。
+
+**方式 A：发给 AI 一句话（推荐）**——对装了旧版本的 AI 助手说：
+
+> 帮我更新这个 skill 到最新版：https://github.com/AMSnoopy/unity2phaser
+
+AI 会重新拉取仓库内容，覆盖它的技能目录（如 `~/.claude/skills/unity2phaser/`、WorkBuddy 技能目录等）。
+
+**方式 B：命令行覆盖**：
+
+```bash
+git clone https://github.com/AMSnoopy/unity2phaser.git
+cp -rf unity2phaser ~/.agents/skills/   # 换成你实际的技能目录
+```
+
+**怎么判断自己是不是旧版**：打开已安装目录里的 `SKILL.md`，第一行有版本号（如 `v1.1 (2026-11-16)`）；或对比 GitHub 上 `SKILL.md` 的同一行。
+
+**更新后请开一个新会话**：已经开着的旧会话里，skill 内容还停留在旧版，新会话才会加载更新后的版本。
+
 ## 使用
 
 装好后，把 Unity 游戏交给 AI 并说明意图，例如：
