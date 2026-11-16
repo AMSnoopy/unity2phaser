@@ -129,7 +129,7 @@ SKILL.md 给出流程总纲；本文是每个阶段的详细操作、产出格�
 
 1. 从场景 YAML 提取对象树（inventory 已给出挂载脚本清单；对象层级用 YAML 缩进/GameObject 父子链读）。
 2. Prefab 实例：打开对应 .prefab 文件，把实例 override 合并到模板值，得到"最终值"，再换算。
-3. 静态 UI 布局逐对象还原：位置/尺寸/贴图/文字/层级（sortingOrder → depth）。
+3. 静态 UI 布局逐对象还原：位置/尺寸/贴图/文字/层级（sortingOrder → depth）。**子元素的 anchoredPosition/pivot 逐个用公式换算（mapping.md §3），不要目测**；贴图做过裁剪的，按 .meta sprite rect 重新推导显示尺寸与偏移（pitfalls #37）。
 4. 每完成一个 Scene，浏览器截图与原版参照（视频帧/原理解截图）目测对照，差异记录。
 5. 动态创建的 UI（代码 `new GameObject`/`AddComponent`）此时不建，阶段 4 随逻辑一起实现。
 

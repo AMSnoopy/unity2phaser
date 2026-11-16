@@ -55,6 +55,8 @@
 1. 找到父链：场景对象 → Prefab 实例（合并 override）→ 根 Canvas / 摄像机。
 2. 算父容器的实际矩形（位置+尺寸）。
 3. 子元素：`局部位置 = anchoredPosition + (锚点在父矩形中的位置) − pivot×自身尺寸`；y 轴翻转（见下）。
+   - **stretch 锚点且 sizeDelta=(0,0)**（TMP 文字常见写法）：`offsetMin = offsetMax = anchoredPosition`，即整个子矩形相对父矩形平移 anchoredPosition，pivot 不参与，直接套简化式。
+   - 局部偏移还要**乘上父物体"rect 尺寸 → 显示尺寸"的比例**再落到 Phaser 坐标（父 rect 186.24 高显示为 182 时，偏移 18.9 → 18.9×182/186.24）。
 4. 拿一个**带旋转或非中心 pivot** 的真实对象当对照组，验证公式只翻转一次，防止翻转两次又翻回来。
 
 **y 轴**：Unity UI/世界坐标 y 向上，Phaser y 向下。序列化数据里的 `m_LocalPosition.y`、`m_AnchoredPosition.y` 在换算后要取反（旋转角度同理：Unity 逆时针为正，Phaser `angle` 顺时针为正，取反）。
