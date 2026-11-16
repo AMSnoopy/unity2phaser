@@ -5,7 +5,7 @@ description: 将 Unity 2D 小游戏（.unitypackage 导出包、项目文件夹�
 
 # Unity → Phaser 转换
 
-> **版本**：v1.1（2026-11-16）。更新方式见仓库 README 的「更新」一节：把仓库链接发给 AI 说"更新 skill"即可，目录名不变，覆盖安装。
+> **版本**：v1.2（2026-11-16）。更新方式见仓库 README 的「更新」一节：把仓库链接发给 AI 说"更新 skill"即可，目录名不变，覆盖安装。
 
 把一个 Unity 2D 小游戏转换为 **1:1 保真的 Phaser 网页游戏**：界面一致、玩法一致、关卡一致、素材一致。用户上传 Unity 项目后，你按八阶段流程自主完成整个转换，中途不需要用户逐步确认。
 
@@ -81,7 +81,7 @@ python "$S/scripts/serve.py" --project game-phaser [--port 8768]
 | 开工（阶段 0 前） | references/workflow.md（全文） |
 | 阶段 1（素材） | workflow.md 阶段1；遇到改名/转格式再看 asset-map 格式 |
 | 阶段 3（布局） | mapping.md §2 §3（两套坐标模型，最高频出错点） |
-| 阶段 4（逻辑） | mapping.md §4-§8；**pitfalls.md 全文**（30 个高频坑） |
+| 阶段 4（逻辑） | mapping.md §4-§8；**pitfalls.md 全文**（高频坑清单） |
 | 阶段 6（验收） | acceptance.md（剧本与门槛） |
 | 任何时候不确定"该怎么做对" | pitfalls.md 对应条目 |
 
